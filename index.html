@@ -43,7 +43,7 @@
 mainButton = window.Telegram.WebApp.MainButton;
 mainButton.show();
 mainButton.text = 'Магазин';
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
+mainButton.onClick( function(){
     mainButton.setBackgroundColor('#ff6161');
 })
 
