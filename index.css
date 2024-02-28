@@ -164,12 +164,3 @@ html, body {
   z-index: 2;
 }
 
-/* index2.html */
-
-.container{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
-  place-items: center;
-  margin: 20px;
-}

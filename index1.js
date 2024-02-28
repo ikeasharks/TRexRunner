@@ -53,12 +53,12 @@
 // })
 // bot.launch()
 
-const imgSrcs = ['https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25','https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25']
+const imgSrcs = ['https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25','https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25']
 const div_card = document.querySelector('.container')
 
 for(let i = 0; i < imgSrcs.length; i++){
 
-  div_card.innerHTML += `<div class="card" style="width: 18rem;"><img src="${imgSrcs[0]}" class="card-img-top" alt="..."></div>`
+  div_card.innerHTML += `<div class="card"><a href=""><img src="${imgSrcs[0]}" class="card-img-top" alt="..."></a></div>`
 
 }
 
