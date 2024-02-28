@@ -14,6 +14,7 @@
 <body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
          <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Space to start</h1>
+         <a href="index2.html">Это страница index2</a>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
@@ -43,7 +44,7 @@
 mainButton = window.Telegram.WebApp.MainButton;
 mainButton.show();
 mainButton.text = 'Магазин';
-mainButton.onClick( function(){
+mainButton.onClick(function(){
     mainButton.setBackgroundColor('#ff6161');
 })
 
