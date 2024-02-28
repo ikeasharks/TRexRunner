@@ -41,12 +41,10 @@
         box.style.visibility="hidden";
     }
 };
-mainButton = window.Telegram.WebApp.MainButton;
-mainButton.show();
-mainButton.text = 'Магазин';
-mainButton.onClick(function(){
-    mainButton.setBackgroundColor('#ff6161');
-})
+var tg = window.Telegram.WebApp;
+tg.MainButton.show();
+tg.MainButton.text = 'Магазин';
+tg.MainButton.onClick(window.open('index2.html', '_self'));
 
 </script>
     
