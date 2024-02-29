@@ -14,13 +14,65 @@
   </body>
 <script>
   
-const imgSrcs = ['https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25','https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25']
-const div_card = document.querySelector('.container')
+  const imgSrcs = ['https://img.freepik.com/free-photo/cute-domestic-kitten-sits-at-window-staring-outside-generative-ai_188544-12519.jpg?w=2000&t=st=1709120394~exp=1709120994~hmac=d1d99685c79c6596659347f1a26e2eea960be3becefd951005b0dfb26f6fca25', 'https://img.freepik.com/free-photo/cute-kitten-sitting-outdoors-looking-at-camera-surrounded-by-snow-generated-by-artificial-intelligence_188544-84910.jpg?w=1380&t=st=1709192532~exp=1709193132~hmac=71b29043cf76594816be0a4493af4dff50b07d6ad7365a73f4da47c06beafe88', 'https://img.freepik.com/free-photo/a-close-up-of-a-cute-fluffy-kitten-staring-generative-ai_188544-9120.jpg?w=1380&t=st=1709192533~exp=1709193133~hmac=8626e10fe72a3ad4abe1c5c4453e60dac40fb6a00133f803e555767922281d51' ]
+  const gameSrcs = ['https://zouariste.github.io/corona-runner/', 'https://vianroyal.github.io/t-rex-runner/', 'https://ikeasharks.github.io/RatRunner/']
+  const gameNames = ['Корона Раннер', 'Черный Медведь', 'Крыска']
+  const div_card = document.querySelector('.container')
+
 
 for(let i = 0; i < imgSrcs.length; i++){
-
-  div_card.innerHTML += `<div class="card"><a href=""><img src="${imgSrcs[0]}" class="card-img-top" alt="..."></a></div>`
-
+  
+  div_card.innerHTML += `<div class="card"><a href="${gameSrcs[i]}"><img src="${imgSrcs[i]}" class="card-img-top" alt="..."></a></div>`
+  
 }
+
+const div_card_click = div_card.querySelectorAll('.card')
+for(let k = 0; k < div_card_click.length; k++){
+  div_card_click[k].addEventListener('click', function () {sendMessageWithKeyboard(gameNames[k], makeKeyboard(gameSrcs[k]));
+})
+    
+}
+
+
+
+async function sendMessageWithKeyboard(message, keyboard)  {
+   console.log(keyboard)
+    const url = 'https://api.telegram.org/bot6560085459:AAG3sb5VMxKBGb_D-Y6pTWf28yz81CmjW50/sendMessage';
+    const params = new URLSearchParams({
+        chat_id: 1066954943,
+        text: message,
+        reply_markup: JSON.stringify(keyboard) // Конвертируем клавиатуру в JSON и добавляем ее к параметрам
+    });
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: params,
+        });
+
+        const data = await response.json();
+        console.log('Message sent with keyboard:', data);
+    } catch (error) {
+        console.error('Error sending message with keyboard:', error);
+    }
+}
+
+function makeKeyboard(link){
+
+  const keyboard = {
+    inline_keyboard: [[{
+      text: 'Тыкай', 
+      web_app: {
+        url: link}
+      }]],
+      resize_keyboard: true // Можете изменять размер клавиатуры
+    };
+  return keyboard;
+}
+
+
 </script>
 </html>
